@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #fff;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(255, 111, 97, 0.8);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
+
+.hero {
+    background: url('https://via.placeholder.com/1200x400?text=K-Drama+Movies') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.hero h1 {
+    font-size: 48px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+}
+
+.recommendations, .testimonials {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.recommendations h2, .testimonials h2 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.recommendation {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.recommendation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+blockquote {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid #ffcc00;
+    padding: 10px 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+blockquote p {
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    color: #ffcc00;
+}
+
+footer {
+    background: rgba(255, 111, 97, 0.8);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+footer h2 {
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}
