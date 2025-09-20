@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make an Appointment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #d0f0ff, #b8e0ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    /* Heading */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 60px;
+      margin-bottom: 40px;
+      text-align: center;
+      color: #111;
+    }
+
+    /* Form container */
+    .form-container {
+      max-width: 1000px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px 40px;
+      justify-items: center;
+    }
+
+    /* Input fields */
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .input-box input, .input-box select {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: 2px solid #000;
+      border-radius: 40px;
+      background: #fff;
+      box-shadow: 4px 6px 0px #1abc9c;
+      outline: none;
+    }
+    .input-box label {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Button */
+    .btn {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #16a085;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>MAKE AN APPOINTMENT</h1>
+
+  <form class="form-container">
+    <div class="input-box">
+      <input type="text" placeholder="Enter patient name">
+      <label>Patient Name</label>
+    </div>
+    <div class="input-box">
+      <input type="email" placeholder="Enter email">
+      <label>Email</label>
+    </div>
+    <div class="input-box">
+      <input type="text" placeholder="Enter symptoms">
+      <label>Symptoms</label>
+    </div>
+    <div class="input-box">
+      <input type="tel" placeholder="Enter phone number">
+      <label>Phone Number</label>
+    </div>
+    <div class="input-box">
+      <input type="date">
+      <label>Select Date</label>
+    </div>
+    <div class="input-box">
+      <select>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label>Gender</label>
+    </div>
+    <button type="submit" class="btn">Book Appointment</button>
+  </form>
+
+</body>
+</html>
