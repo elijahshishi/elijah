@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #d0f0ff, #b8e0ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- NAVIGATION BAR --- */
+    .nav {
+      background: linear-gradient(90deg,#b7dbff,#9bd1ff);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+    .brand .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      color: #2b6bf7;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+    .nav-links a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #111;
+      border-radius: 30px;
+      font-weight: 600;
+      background: white;
+    }
+    .nav-links a.active {
+      background: #0001;
+      font-weight: 700;
+    }
+    .nav-links a.cta {
+      background: #2b6bf7;
+      color: white;
+    }
+
+    /* --- CONTACT PAGE CONTENT --- */
+    .contact-container {
+      display: flex;
+      max-width: 1100px;
+      width: 100%;
+      margin: auto; /* center vertically and horizontally */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .contact-info {
+      background: #fff;
+      flex: 1;
+      padding: 40px;
+    }
+    .contact-info h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .contact-info p {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+    .contact-info .details {
+      margin-top: 20px;
+    }
+    .detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .detail span {
+      font-size: 20px;
+      margin-right: 10px;
+      display: inline-block;
+      width: 30px;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: #b8aef5;
+      flex: 1;
+      padding: 40px;
+    }
+    .contact-form label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid #444;
+      background: #d2c9f7;
+      outline: none;
+      font-size: 14px;
+    }
+    .row {
+      display: flex;
+      gap: 15px;
+    }
+    .row .col {
+      flex: 1;
+    }
+    .contact-form button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+    }
+    .contact-form button:hover {
+      background: #333;
+    }
+    .contact-form button::after {
+      content: " ➤";
+      font-size: 14px;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">+</div> Start
+    </div>
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="appointment.html">Appointment</a>
+      <a href="#" class="active">Contact Us</a>
+      <a href="login.html" class="cta">Sign Up / Sign In</a>
+    </nav>
+  </header>
+
+  <!-- CONTACT CONTENT -->
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Have questions or need help with your appointment? We’re here to assist you with any questions or concerns.</p>
+      <div class="details">
+        <div class="detail"><span>📞</span> 09199190919</div>
+        <div class="detail"><span>✉️</span> huiiii@gmail.com</div>
+        <div class="detail"><span>🌐</span> pisbuk.com</div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <div class="row">
+          <div class="col">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+          </div>
+          <div class="col">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter phone number">
+          </div>
+        </div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" placeholder="Write your message here"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
