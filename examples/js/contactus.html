@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family: 'Poppins', sans-serif;
+      background-image: url('Contact Us.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .nav-tab {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      height: 48px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg,#b7dbff,#9bd1ff);
+      border-top-right-radius: 24px;
+      border-bottom-right-radius: 24px;
+      z-index: 105;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+    .nav-tab .logo {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      color: #2b6bf7;
+      font-weight: 700;
+    }
+    .nav-tab .start-text {
+      font-weight: 700;
+      color: #0b2a4a;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: -260px;       
+      width: 260px;
+      height: 100%;
+      background: linear-gradient(180deg,#b7dbff,#9bd1ff);
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      transition: left .28s ease;
+      z-index: 100;
+    }
+
+    .nav-tab:hover + .nav,
+    .nav:hover { left: 0; }
+
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #0b2a4a; margin-bottom: 20px; }
+    .brand .logo { width:36px; height:36px; border-radius:50%; background:white; display:grid; place-items:center; color:#2b6bf7; font-weight:700; }
+    .nav-links { display:flex; flex-direction:column; gap:12px; }
+    .nav-links a { padding:10px 14px; text-decoration:none; color:#111; border-radius:12px; font-weight:600; background:white; }
+    .nav-links a.active { background:rgba(0,0,0,0.06); font-weight:700; }
+    .nav-links a.cta { background:#2b6bf7; color:#fff; }
+
+    .contact-container {
+      display: flex;
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .contact-info {
+      background: #fff;
+      flex: 1;
+      padding: 40px;
+    }
+    .contact-info h2 { font-size: 28px; margin-bottom: 15px; }
+    .contact-info p { margin-bottom: 20px; font-size: 14px; color: #444; }
+    .contact-info .details { margin-top: 20px; }
+    .detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .detail span {
+      font-size: 20px;
+      margin-right: 10px;
+      display: inline-block;
+      width: 30px;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: #b8aef5;
+      flex: 1;
+      padding: 40px;
+    }
+    .contact-form label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 2px solid #444;
+      background: #d2c9f7;
+      outline: none;
+      font-size: 14px;
+    }
+    .row { display: flex; gap: 15px; }
+    .row .col { flex: 1; }
+    .contact-form button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+    }
+    .contact-form button:hover { background: #333; }
+    .contact-form button::after { content: " ➤"; font-size: 14px; margin-left: 6px; }
+  </style>
+</head>
+<body>
+
+  <div class="nav-tab">
+    <div class="logo">+</div>
+    <div class="start-text"></div>
+  </div>
+
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">+</div>
+      <div>Start</div>
+    </div>
+    <nav class="nav-links">
+      <a href="homepage.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="appointment.html">Appointment</a>
+      <a href="#" class="active">Contact Us</a>
+      <a href="login.html" class="cta">Sign Up / Sign In</a>
+    </nav>
+  </header>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>Have questions or need help with your appointment? We’re here to assist you with any questions or concerns.</p>
+      <div class="details">
+        <div class="detail"><span>📞</span> 09199190919</div>
+        <div class="detail"><span>✉️</span> huiiii@gmail.com</div>
+        <div class="detail"><span>🌐</span> pisbuk.com</div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <div class="row">
+          <div class="col">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+          </div>
+          <div class="col">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter phone number">
+          </div>
+        </div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" placeholder="Write your message here"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
