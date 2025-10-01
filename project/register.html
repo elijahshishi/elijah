@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: url("register.png");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .nav-tab {
+        position: fixed;
+        top: 18px;
+        left: 0;
+        height: 48px;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(90deg, #b7dbff, #9bd1ff);
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        z-index: 105;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+      .nav-tab .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: #2b6bf7;
+        font-weight: 700;
+      }
+      .nav-tab .start-text {
+        font-weight: 700;
+        color: #0b2a4a;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100%;
+        background: linear-gradient(180deg, #b7dbff, #9bd1ff);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.28s ease;
+        z-index: 100;
+      }
+      .nav-tab:hover + .nav,
+      .nav:hover {
+        left: 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: #0b2a4a;
+        margin-bottom: 20px;
+      }
+      .brand .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: #2b6bf7;
+        font-weight: 700;
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        padding: 10px 14px;
+        text-decoration: none;
+        color: #111;
+        border-radius: 12px;
+        font-weight: 600;
+        background: white;
+      }
+      .nav-links a.active {
+        background: rgba(0, 0, 0, 0.06);
+        font-weight: 700;
+      }
+      .nav-links a.cta {
+        background: #2b6bf7;
+        color: #fff;
+      }
+
+      .register-container {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 400px;
+      }
+      .register-container h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .input-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        outline: none;
+        font-size: 14px;
+        background: #f7f7f7;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+          inset -2px -2px 5px rgba(255, 255, 255, 0.6);
+      }
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background: #0056d6;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #0041a8;
+      }
+
+      .register {
+        margin-top: 15px;
+        font-size: 14px;
+        text-align: center;
+      }
+      .register a {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 8px 18px;
+        background: #009688;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .register a:hover {
+        background: #00796b;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="nav-tab">
+      <div class="logo">+</div>
+      <div class="start-text"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">+</div>
+        <div>Start</div>
+      </div>
+      <nav class="nav-links">
+        <a href="homepage.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="appointment.html">Appointment</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html">Sign Up / Sign In</a>
+      </nav>
+    </header>
+
+    <div class="register-container">
+      <h2>Register</h2>
+
+      <form action="register.php" method="post" autocomplete="off">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            title="Enter a valid email address"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            title="Password must be at least 8 characters, contain letters and numbers"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required />
+        </div>
+
+        <button type="submit" class="btn">SIGN UP</button>
+      </form>
+
+      <div class="register">
+        Already have an account?<br />
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+        document.querySelectorAll("input, textarea").forEach((el) => {
+          el.value = "";
+        });
+      };
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppointMed - Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --accent: #2b6bf7;
+        --muted: #666;
+        --shadow: 0 6px 24px rgba(10, 10, 20, 0.08);
+        --max-width: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: #f7fbff url("homepage.png") no-repeat center/cover;
+        color: #111;
+      }
+
+      .nav-tab {
+        position: fixed;
+        top: 18px;
+        left: 0;
+        height: 48px;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(90deg, #b7dbff, #9bd1ff);
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        z-index: 105;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+      .nav-tab .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: #2b6bf7;
+        font-weight: 700;
+      }
+      .nav-tab .start-text {
+        font-weight: 700;
+        color: #0b2a4a;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100%;
+        background: linear-gradient(180deg, #b7dbff, #9bd1ff);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.28s ease;
+        z-index: 100;
+      }
+
+      .nav-tab:hover + .nav,
+      .nav:hover {
+        left: 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: #0b2a4a;
+        margin-bottom: 20px;
+      }
+      .brand .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: #2b6bf7;
+        font-weight: 700;
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        padding: 10px 14px;
+        text-decoration: none;
+        color: #111;
+        border-radius: 12px;
+        font-weight: 600;
+        background: white;
+      }
+      .nav-links a.active {
+        background: rgba(0, 0, 0, 0.06);
+        font-weight: 700;
+      }
+      .nav-links a.cta {
+        background: #2b6bf7;
+        color: #fff;
+      }
+
+      .hero {
+        max-width: var(--max-width);
+        margin: 32px auto;
+        display: grid;
+        grid-template-columns: 1fr 460px;
+        gap: 40px;
+        align-items: center;
+        padding: 24px;
+        min-height: 72vh;
+        position: relative;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
+      }
+      .left {
+        position: relative;
+        z-index: 2;
+        padding: 40px 20px;
+      }
+      h1 {
+        margin: 0 0 18px 0;
+        font-size: clamp(36px, 6vw, 72px);
+        line-height: 0.96;
+        letter-spacing: 0.6px;
+        font-weight: 800;
+        color: #0b1320;
+      }
+      p.lead {
+        margin: 0 0 26px 0;
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 640px;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(180deg, #ff6464, #ff3d3d);
+        color: white;
+        padding: 14px 26px;
+        border-radius: 40px;
+        font-weight: 700;
+        box-shadow: 0 8px 30px rgba(255, 80, 80, 0.18);
+      }
+      .right {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        align-items: flex-start;
+        justify-content: center;
+        padding-right: 20px;
+      }
+      .feature {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        width: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0.86)
+        );
+        border-radius: 28px;
+        padding: 18px 20px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(10, 20, 40, 0.04);
+      }
+      .icon-wrap {
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+      }
+      .icon svg {
+        width: 40px;
+        height: 40px;
+        stroke: #2b2be8;
+        fill: none;
+        stroke-width: 6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .feature h3 {
+        margin: 0;
+        font-size: 20px;
+      }
+      .feature p {
+        margin: 6px 0 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .feature:nth-child(2) {
+        transform: translateY(6px);
+      }
+      .feature:nth-child(3) {
+        transform: translateY(12px);
+      }
+      @media (max-width: 950px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 18px;
+        }
+        .right {
+          order: 2;
+          flex-direction: row;
+          gap: 12px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .feature {
+          width: calc(50% - 10px);
+        }
+      }
+      @media (max-width: 520px) {
+        .feature {
+          width: 100%;
+        }
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="nav-tab">
+      <div class="logo">+</div>
+      <div class="start-text"></div>
+    </div>
+
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">+</div>
+        <div>Start</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="homepage.html" class="active">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="appointment.html">Appointment</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.html" class="cta">Sign Up/Sign In</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="left">
+        <h1>WELCOME TO<br />APPOINTMED</h1>
+        <p class="lead">
+          Making healthcare easier by helping you schedule appointments and
+          access quality care.
+        </p>
+        <a class="btn" href="appointment.html">Book an Appointment</a>
+      </section>
+
+      <aside class="right">
+        <div class="feature">
+          <div class="icon-wrap">
+            <div class="icon"></div>
+          </div>
+          <div>
+            <h3>Easy Booking</h3>
+            <p>Set up appointments in minutes.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="icon-wrap">
+            <div class="icon"></div>
+          </div>
+          <div>
+            <h3>Licensed Healthcare Staff</h3>
+            <p>Trusted professionals ready to help.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="icon-wrap">
+            <div class="icon"></div>
+          </div>
+          <div>
+            <h3>Accessible</h3>
+            <p>Care that's always within reach.</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+  </body>
+</html>

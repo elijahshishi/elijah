@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard – AppointMed</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --accent: #2b6bf7;
+        --shadow: 0 6px 24px rgba(10, 10, 20, 0.08);
+        --max-width: 1100px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          rgba(215, 233, 255, 0.9) 0%,
+          rgba(215, 209, 255, 0.9) 100%
+        );
+      }
+
+      .nav-tab {
+        position: fixed;
+        top: 18px;
+        left: 0;
+        height: 48px;
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(90deg, #b7dbff, #9bd1ff);
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+        z-index: 105;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+      .nav-tab .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      header.nav {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100%;
+        background: linear-gradient(180deg, #b7dbff, #9bd1ff);
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.28s ease;
+        z-index: 100;
+      }
+      .nav-tab:hover + .nav,
+      .nav:hover {
+        left: 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        color: #0b2a4a;
+        margin-bottom: 20px;
+      }
+      .brand .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .nav-links a {
+        padding: 10px 14px;
+        text-decoration: none;
+        color: #111;
+        border-radius: 12px;
+        font-weight: 600;
+        background: white;
+      }
+      .nav-links a.active {
+        background: rgba(0, 0, 0, 0.06);
+        font-weight: 700;
+      }
+      .nav-links a.cta {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      main {
+        max-width: var(--max-width);
+        margin: 90px auto 40px auto;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+        color: #0b2a4a;
+      }
+
+      .section-card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+      }
+      .section-card h2 {
+        margin-bottom: 14px;
+        color: #0b2a4a;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      th {
+        background: #d9ecff;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .action-btn {
+        padding: 4px 8px;
+        border: none;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+      .notification {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .book-link {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 16px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="nav-tab"><div class="logo">+</div></div>
+
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">+</div>
+        <div>AppointMed</div>
+      </div>
+      <nav class="nav-links">
+        <a href="homepage.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="appointment.html">Appointment</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="logout.php" class="cta">Logout</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Dashboard</h1>
+
+      <section class="section-card" id="notif-section">
+        <h2>Notifications</h2>
+        <div id="notifications"></div>
+      </section>
+
+      <section class="section-card">
+        <h2>Upcoming Appointments</h2>
+        <table id="upcoming-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Service</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="section-card">
+        <h2>Appointment History</h2>
+        <table id="history-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Service</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="section-card" style="text-align: center">
+        <h2>Need a new appointment?</h2>
+        <a class="book-link" href="appointment.html">Book Now</a>
+      </section>
+    </main>
+
+    <script>
+      const upcoming = [];
+      const history = [];
+      const notifications = [];
+
+      const upBody = document.querySelector("#upcoming-table tbody");
+      if (upcoming.length) {
+        upcoming.forEach((a) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+      <td>${a.date}</td>
+      <td>${a.time}</td>
+      <td>${a.service}</td>
+      <td>${a.status}</td>
+      <td>
+        <button class="action-btn">Reschedule</button>
+        <button class="action-btn" style="background:#e74c3c;">Cancel</button>
+      </td>`;
+          upBody.appendChild(tr);
+        });
+      } else {
+        upBody.innerHTML = `<tr><td colspan="5" style="text-align:center;color:#666;">No upcoming appointments</td></tr>`;
+      }
+
+      const hBody = document.querySelector("#history-table tbody");
+      if (history.length) {
+        history.forEach((a) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${a.date}</td><td>${a.time}</td><td>${a.service}</td><td>${a.status}</td>`;
+          hBody.appendChild(tr);
+        });
+      } else {
+        hBody.innerHTML = `<tr><td colspan="4" style="text-align:center;color:#666;">No past appointments</td></tr>`;
+      }
+
+      const notifDiv = document.getElementById("notifications");
+      if (notifications.length) {
+        notifications.forEach((n) => {
+          const div = document.createElement("div");
+          div.className = "notification";
+          div.textContent = n;
+          notifDiv.appendChild(div);
+        });
+      } else {
+        notifDiv.innerHTML =
+          '<p style="color:#666;">No notifications at this time.</p>';
+      }
+    </script>
+
+  </body>
+</html>
